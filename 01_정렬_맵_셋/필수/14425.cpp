@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <map>
+#include <set>
 using namespace std;
 
 
@@ -10,16 +10,16 @@ int main() {
 
     int n,m;
     cin >> n >>m;
-    map <string, int> _map;
+    set <string> s;
     string str;
     int count = 0;
     for (int i = 0; i < n; i++) {
         cin >> str;
-        _map[str]++;
+        s.insert(str);
     }
     for (int i = 0; i < m; i++) {
         cin >> str;
-        if (_map.find(str) != _map.end()) {
+        if (s.find(str) != s.end()) { //str을 가리키는 반복자를 반환, 없다면 s.end()와 같은 반복자 반환.
             count++;
         }
     }
