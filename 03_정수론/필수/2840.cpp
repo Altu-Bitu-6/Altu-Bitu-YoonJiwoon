@@ -15,13 +15,13 @@ int main() {
 
 	while (k--) {
 		cin >> s >> c;
-		pos += s % n;
+		pos = (pos+s) % n;
 		
-		if (v[pos % n] != '?' && v[pos % n] != c) {
-			v[pos % n] = '!';
+		if (v[pos] != '?' && v[pos] != c) {
+			v[pos] = '!';
 			continue;
 		}
-		v[pos % n] = c;
+		v[pos] = c;
 
 	}
 
